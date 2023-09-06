@@ -17,6 +17,11 @@ app.listen(port, () => {
     console.log(`Application is running (PROT: ${port})`);
 });
 
+app.get('/', (req, res) => {
+    res.json("Hello World");
+    
+})
+
 app.get('/getallproduct', async (req, res) => {
     const response = await Product.find();
     res.json(response);
